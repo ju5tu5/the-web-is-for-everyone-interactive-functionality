@@ -1,0 +1,20 @@
+<%- include('./partials/head') %>
+
+<main>
+  <% articles.forEach(article => { %>
+  <article>
+    <h2><%- article.title.rendered %></h2>
+    <div>
+      <span>
+        <%= new Date(article.date).getDate() %>/<%= new Date(article.date).getMonth() %>/<%= new
+        Date(article.date).getFullYear() %>
+      </span>
+      <%= shares.find((share) => share.slug == article.slug)) %>
+    </div>
+    <p><%- article.excerpt.rendered %></p>
+    <a href="/article/<%= article.slug %>">Lees meer...</a>
+  </article>
+  <% }) %>
+</main>
+
+<%- include('./partials/foot') %>

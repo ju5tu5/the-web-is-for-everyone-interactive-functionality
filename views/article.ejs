@@ -1,0 +1,21 @@
+<%- include('./partials/head') %>
+
+<main>
+  <article>
+    <h2><%- article.title.rendered %></h2>
+      <div>
+        <span><%= new Date(article.date).getDate() %>/<%= new Date(article.date).getMonth() %>/<%= new
+      Date(article.date).getFullYear() %></span>
+        <form action="/article/<%= article.slug %>" method="post">
+          <input type="hidden" name="slug" value="<%= article.slug %>">
+          <label for="share"><%= article.likes  %> keer geliked</label>
+          <button type="submit" id="share"><span>Like dit artikel</span></button>
+        </form>
+      </div>
+      
+    </p>
+    <%- article.content.rendered %>
+  </article>
+</main>
+
+<%- include('./partials/foot') %>
