@@ -9,7 +9,7 @@
         <%= new Date(article.date).getDate() %>/<%= new Date(article.date).getMonth() %>/<%= new
         Date(article.date).getFullYear() %>
       </span>
-      <%= shares.find((share) => share.slug == article.slug)) %>
+      <span><%= article.shares %> keer gedeeld</span>
     </div>
     <p><%- article.excerpt.rendered %></p>
     <a href="/article/<%= article.slug %>">Lees meer...</a>
